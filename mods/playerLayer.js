@@ -63,6 +63,22 @@ var playerLayer = {
 		}
 		//Return game tables
 		return groupedplayers;
+	},
+	//Assign cards function gets cards for each player in the gamesArray, from the card array, and returns the gameArray with the cards added.
+	assignCards: function(gamesArray, cardArray){
+		var pick = require('./GetTenRandomCards.js');
+		//Loop throug the games (each group of players)
+		for(var i=0; i<gamesArray.length; i++){
+			//Make a copy of the card array, so that players in each game have unique cards with respect to
+			//players in that same game, without requiring enough unique cards that they are globally unique between games
+			var cardCopy = cardArray.slice(0);
+			//loop through one group assinging cards to individual players
+			for(var j=1; j < gamesArray[i].length; j++){
+				gamesArray[i][j].cards = pick.GetRandomCards(cardCopy);
+			}
+		}
+		return gamesArray;
 	}
 }
+
 module.exports = playerLayer;

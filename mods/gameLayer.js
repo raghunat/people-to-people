@@ -12,9 +12,9 @@ this.path = path;
 
 var cardArray = []
 for(var i=0; i<500; i++){
-	cardArray.push(new Card("Card" + i, "Somepath"));
+	cardArray.push(new Card("Card" + i, "Somepathtotheimage"));
 }
-
+//Array of players for testing
 var peopleArray = [
 new Person("Tugce", 0, true),
 new Person("Scott", 0, false),
@@ -47,20 +47,11 @@ new Person("Philip", 2, true),
 ];
 
 var playerLayer = require('./playerLayer.js');
-var pick = require('./GetTenRandomCards.js');
+//var cardAssign = require('./cardAssign.js')
 
 var gamesArray = playerLayer.makeGroups(peopleArray);
+gamesArray = playerLayer.assignCards(gamesArray, cardArray);
 
-//Loop throug the games (each group of players)
-for(var i=0; i<gamesArray.length; i++){
-	//Make a copy of the card array, so that players in each game have unique cards with respect to
-	//players in that same game, without requiring enough unique cards that they are globally unique between games
-	var cardCopy = cardArray.slice(0);
-	//loop through one group assinging cards to individual players
-	for(var j=1; j < gamesArray[i].length; j++){
-		gamesArray[i][j].cards = pick.GetRandomCards(cardCopy);
-	}
-}
 
 //Display some results for debugging:
 
