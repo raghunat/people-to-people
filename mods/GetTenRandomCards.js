@@ -19,12 +19,12 @@ and then pushes them to the chosenCards array. Thus making each choice unique
 
 exports.GetRandomCards = function (cards) {
   var chosenCards = [];
-  for (var i = 0; i < ten ++i) {
-    var random = Math.floor((Math.random() * cards.length);
+  for (var i = 0; i < 10; ++i) {
+    var random = Math.floor((Math.random() * cards.length));
     var randomCards = cards.splice(random, 1)[0];
-    empty.push(randomCards);
+    chosenCards.push(randomCards);
     /*comment the following out when moved to project*/
     console.log(chosenCards[i]);
   }
-  return empty;
+  return chosenCards;
 };

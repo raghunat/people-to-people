@@ -1,5 +1,9 @@
 var playerLayer = {
-	makeGroups: function(players){
+	//Make groups receives the array of all players that need to participate and the array of all cards
+	//First it creates a group of groups, representing each game that will be played
+	//Then it assigns players to those games, picking 1 king per game, and making the rest pawns
+	//pickedLast is updated, and a role property explicitly listing the player's role is added
+	makeGroups: function(players, cards){
 
 		//Specify the max size of each group
 		var targetgroupsize = 10;
@@ -32,6 +36,7 @@ var playerLayer = {
 					groupedplayers[i].push(players.splice(randIndex, 1)[0]);
 					groupedplayers[i][0].pickedLast = "true";
 					groupedplayers[i][0].role = "King";
+					groupedplayers[i][0].cards = "The King Needs No Cards";
 					kingset = 1;
 				}
 			}
@@ -52,20 +57,12 @@ var playerLayer = {
 					//Set the non-kings to indicate they did not play king last
 					groupedplayers[i][groupedplayers[i].length - 1].pickedLast = "false";
 					//Add role of pawn to each pawn
-					groupedplayers[i][groupedplayers[i].length - 1].role = "Pawn";
+					groupedplayers[i][groupedplayers[i].length - 1].role = "Pawn";					
 				}
 			}
 		}
-		/*
-		console.log(groupedplayers[0]);
-		console.log(groupedplayers[1]);
-		console.log(groupedplayers[2]);
-		*/
-		//Returns an array of 3 objects. Each object is an array of up to 10 player objects, the first of which will be the king.
-		//Each player object has had a role added, and set to their role in the next game. Each player has had their pickedLast
-		//updated to reflect whether they were just picked as a king.
+		//Return game tables
 		return groupedplayers;
 	}
 }
-
 module.exports = playerLayer;
