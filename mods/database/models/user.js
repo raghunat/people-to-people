@@ -1,5 +1,5 @@
 /******************************************************************************
-User.js
+user.js
 Author: mcdo7187@fredonia.edu
 Date: 4/6/2015
 Version: 0.0.5
@@ -23,11 +23,36 @@ var userSchema = mongoose.Schema({
         email: { type: String, required: true, unique: true },
         password: { type: String, required: true },
 		firstName: String,
-		lastName: String
+		lastName: String,
 		location: String
     }
 });
 
+// Asynchronous method
+
+// Hashing the password
+bcrypt.genSalt(10, function(err, salt) {
+    bcrypt.hash(password, salt, function(err, hash) {
+        // Store hash in your password DB.
+    });
+});
+
+// Checking the passwords
+// Load hash from your password DB.
+bcrypt.compare(this.user.password), hash, function(err, res) {
+    // res == true
+});
+bcrypt.compare(this.is.not.user.password), hash, function(err, res) {
+    // res == false
+});
+
+
+
+
+
+
+
+// Synchronous Method
 
 //Hashing a password
 userSchema.methods.generateHash = function(password) {
@@ -38,6 +63,7 @@ userSchema.methods.verifyPassword = function(password) {
     return bcrypt.compareSync(password, this.user.password);
 };
 
+// I think this will update the user information? 
 userSchema.methods.updateUser = function(request, response){
 
 	this.user.name = request.body.name;
