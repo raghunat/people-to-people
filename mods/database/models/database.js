@@ -25,6 +25,7 @@ $rename - renames a field
 // Grabbing Mongo for our project
 var mongo = require('mongodb').MongoClient;
 
+//Not username and password not included.
 var uri = "mongodb://ds061158.mongolab.com:61158/gamething";
 
 // Connecting to our hosted datatbase. Giving us an error message if we are unable to connect.
