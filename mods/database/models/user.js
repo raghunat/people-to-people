@@ -4,6 +4,16 @@ Author: mcdo7187@fredonia.edu
 Date: 4/6/2015
 Version: 0.0.5
 *******************************************************************************/
+// Model Information
+/*
+>> userID
+>> firstName
+>> lastName
+>> email      *unique field
+>> password   *encrypted
+>> lastRole   (bool)
+>> location
+*/
 
 /*Personal Notes
 
@@ -19,9 +29,9 @@ var bcrypt   = require('bcrypt-nodejs');
 //Creating a schema for Users
 var userSchema = mongoose.Schema({
     user: {
-		username: { type: String, required: true, unique: true },
-        email: { type: String, required: true, unique: true },
-        password: { type: String, required: true },
+		    username: { type: String, required: true, unique: true },
+          email: { type: String, required: true, unique: true },
+          password: { type: String, required: true },
 		firstName: String,
 		lastName: String,
 		location: String
@@ -45,10 +55,6 @@ bcrypt.compare(this.user.password), hash, function(err, res) {
 bcrypt.compare(this.is.not.user.password), hash, function(err, res) {
     // res == false
 });
-
-
-
-
 
 
 

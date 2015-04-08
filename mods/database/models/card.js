@@ -3,6 +3,14 @@ card.js
 Author: mcdo7187@fredonia.edu
 Date: 4/6/2015
 Version: 0.0.5
+
+
+Cards (model)
+
+>> picID
+>> pic
+>> label
+
 *******************************************************************************/
 
 var mongoose = require('mongoose');
@@ -10,8 +18,8 @@ var mongoose = require('mongoose');
 //Creating a schema for cards
 var cardSchema = mongoose.Schema({
     card: {
-		name: String,
-		cardNumber: Number
+		      cardPicture: String,
+		      cardLabel: Number,
     }
 });
 
