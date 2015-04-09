@@ -22,14 +22,14 @@ $rename - renames a field
 */
 
 
-// Grabbing Mongo for our project
-var mongo = require('mongodb').MongoClient;
+// Grabbing Mongoose for our project
+var mongoose = require('mongoose')
 
-//Not username and password not included.
+//Note username and password not included.
 var uri = "mongodb://ds061158.mongolab.com:61158/gamething";
 
 // Connecting to our hosted datatbase. Giving us an error message if we are unable to connect.
-mongo.connect(uri, function(err, db){
+mongoose.connect(uri, function(err, db){
 	if(err){
 		console.log("Error: Unable to connect to database.")
 		return;
