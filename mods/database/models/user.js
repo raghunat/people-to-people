@@ -6,9 +6,9 @@ Version: 0.0.5
 *******************************************************************************/
 // Model Information
 /*
->> userID
+>> userID  
 >> firstName
->> lastName
+>> lastName 
 >> email      *unique field
 >> password   *encrypted
 >> lastRole   (bool)
@@ -29,12 +29,13 @@ var bcrypt   = require('bcrypt-nodejs');
 //Creating a schema for Users
 var userSchema = mongoose.Schema({
     user: {
-		    username: { type: String, required: true, unique: true },
-          email: { type: String, required: true, unique: true },
-          password: { type: String, required: true },
+		username: { type: String, required: true, unique: true },
+        email: { type: String, required: true, unique: true },
+        password: { type: String, required: true },
 		firstName: String,
 		lastName: String,
-		location: String
+		location: String,
+        lastRole: Boolean
     }
 });
 
@@ -74,7 +75,7 @@ userSchema.methods.updateUser = function(request, response){
 
 	this.user.name = request.body.name;
 	this.user.address = request.body.address;
-	 this.user.save();
+	this.user.save();
 	response.redirect('/user');
 };
 
