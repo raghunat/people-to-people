@@ -12,7 +12,7 @@ this.path = path;
 
 var cardArray = []
 for(var i=0; i<500; i++){
-	cardArray.push(new Card("Card" + i, "Somepathtotheimage"));
+	cardArray.push(new Card("Card " + i, " Somepathtotheimage"));
 }
 //Array of players for testing
 var peopleArray = [
