@@ -3,9 +3,6 @@ playScore.js
 Author: mcdo7187@fredonia.edu
 Date: 4/6/2015
 Version: 0.0.5
-
-
-
 *******************************************************************************/
 
 var mongoose = require('mongoose');
