@@ -7,11 +7,11 @@ var playerLayer = {
 
 		//Specify the max size of each group
 		var targetgroupsize = 10;
-		
+
 		//Determine the number of groups to generate, divide by target size,
 		//round up to make room for remainder
 		var groups = Math.ceil(players.length / targetgroupsize);
-		
+
 		//Initialize array to push new group arrays to
 		var groupedplayers = [];
 
@@ -42,7 +42,7 @@ var playerLayer = {
 			}
 		}
 
-		//Split the players in to their new groups, 
+		//Split the players in to their new groups,
 		//keep going as long as anyone is left in players array
 		while(players.length > 0){
 			//Loop through the new arrays, splicing out one name at a time from
@@ -57,7 +57,7 @@ var playerLayer = {
 					//Set the non-kings to indicate they did not play king last
 					groupedplayers[i][groupedplayers[i].length - 1].pickedLast = "false";
 					//Add role of pawn to each pawn
-					groupedplayers[i][groupedplayers[i].length - 1].role = "Pawn";					
+					groupedplayers[i][groupedplayers[i].length - 1].role = "Pawn";
 				}
 			}
 		}
