@@ -1,0 +1,61 @@
+.nav-wrapper{background-color: #069;}
+.brand-logo{margin: 0 0 0 10px;}
+body {
+      background-color: gray;
+}
+
+ul.images {
+  margin: 0 auto;
+  padding: 0;
+  white-space: nowrap;
+  width: 100%;
+  overflow-x: auto;
+  background-color: #ddd;
+  border-top: 5px solid;
+}
+ul.images li {
+  display: inline-block;
+  margin-right: 5px;
+  box-shadow: 0 0 3px #303030;
+}
+img{
+    height: 100px;
+    width: 200px;}
+#Topic{
+    font-size: 4em;
+    padding: 1em 8px;
+    margin: 0;
+    text-align: center;}
+#button{
+    background-color: #069;
+	margin: 0 auto;}
+.row{
+	text-align: center;}
+#SelectedImg{
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 300px 0 300px 0;
+    border: dashed;}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
