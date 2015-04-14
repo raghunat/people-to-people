@@ -1,0 +1,35 @@
+**************************************************
+*                   Guidelines                   *
+*                                                *
+*             Stuff for the Database             *
+*                                                *
+*  We can use this file to communicate with each *
+*            other or make soft-changes          *
+*                                                *
+**************************************************
+
+
+1) Database Models and Schemas
+
+Cards (model)
+
+>> picID
+>> pic
+>> label
+
+User (model)
+
+>> userID
+>> firstName
+>> lastName
+>> email      *unique field
+>> password   *encrypted
+>> lastRole   (bool)
+>> location
+
+Game
+
+>> gameID
+>> time
+>> location
+>> userIDs
