@@ -1,6 +1,6 @@
 io.on('enteringWaitingWaitingRoom', playerID, Geolocation)
 
-io.emit('displayWaitingRoom')
+io.emit('displayWaitingRoom', timeToNextGame)
 
 io.on('playerExitedClient', playerID)
 
