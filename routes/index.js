@@ -7,9 +7,21 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET home page. */
+
 router.get('/developer', function(req, res, next) {
   res.render('developer', { title: 'Developer' });
 });
 
-module.exports = router;
+router.get('/appLogin', function(req, res, next) {
+  res.render('appLogin', { title: 'appLogin' });
+});
 
+router.get('/appRegister', function(req, res, next) {
+  res.render('appRegister', { title: 'appRegister' });
+});
+
+router.get('/title', function(req, res, next) {
+  res.render('title', { title: 'title' });
+});
+
+module.exports = router;
