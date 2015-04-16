@@ -11,6 +11,8 @@
     "debug": "~2.1.1",
     "ejs": "~2.3.1",
     "express": "~4.12.2",
+    "jquery-browserify": "^1.8.1",
+    "jquery-mousewheel": "^3.1.12",
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0"
   }
