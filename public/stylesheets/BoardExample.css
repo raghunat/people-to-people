@@ -1,61 +1,80 @@
-.nav-wrapper{background-color: #069;}
+.nav-wrapper{background-color: #4B4E5A;}
+
 .brand-logo{margin: 0 0 0 10px;}
-body {
-      background-color: gray;
+
+#player-cards {
+    background-color: #ddd;
+    padding-top:20px;
+    text-align:center;
+    background-image: url('/images/board.png');
+    background-size: 100% auto;
+    border-top: 5px solid #4B4E5A;
 }
 
-ul.images {
-  margin: 0 auto;
-  padding: 0;
-  white-space: nowrap;
-  width: 100%;
-  overflow-x: auto;
-  background-color: #ddd;
-  border-top: 5px solid;
+.owl-nav{
+    text-align:center;
 }
-ul.images li {
-  display: inline-block;
-  margin-right: 5px;
-  box-shadow: 0 0 3px #303030;
+.owl-prev, .owl-next{
+    background-color: #4B4E5A;
+    color:white;
+    width:100px;
+    display:inline-block;
+    padding:5px;
+    text-align:center;
+    margin:10px;
+    cursor: pointer;
 }
-img{
-    height: 100px;
-    width: 200px;}
-#Topic{
+
+.owl-prev:hover, .owl-next:hover{
+    background-color:white;
+    color: #4B4E5A;
+}
+
+@media only screen and (max-width: 768px) {
+    .owl-prev, .owl-next{
+        width:40%;
+        padding:10px 5%;
+    }
+}
+
+
+#player-cards .item img{
+    box-shadow: 0 0 3px #303030;
+}
+
+.card-title{
+    background-color:#8B8CA6 !important;
+    width:inherit;
+    text-align:center;
+    color:white;
+    padding:30px;
+}
+
+.topic{
     font-size: 4em;
-    padding: 1em 8px;
-    margin: 0;
-    text-align: center;}
-#button{
-    background-color: #069;
-	margin: 0 auto;}
+    float:left;
+    width:33%;
+}
+
+
+.btn{
+    background-color:#4B4E5A !important;
+    width: 75%;
+    padding: 10px auto !important;
+}
+
+.btn:hover{
+    background-color:#8B8CA6 !important;
+}
+
 .row{
-	text-align: center;}
+	text-align: center;
+}
+
 #SelectedImg{
     width: 75%;
     margin: 0 auto;
     text-align: center;
     padding: 300px 0 300px 0;
-    border: dashed;}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
+    border: dashed;
+}

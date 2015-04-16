@@ -1,0 +1,27 @@
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+.nav-wrapper{background-color: #4B4E5A;}
+
+.brand-logo{margin: 0 0 0 10px;}
+
+.container{
+    text-align:center; 
+    background-color:#DFE4EA;
+    padding:60px !important;
+}
+
+h1{margin-bottom:79px !important;}
+
+.parallax-container{height:100vh !important;}
+
+.progress{background-color:white !important; width:50% !important;}
+
+.indeterminate{background-color:#B7B9C7 !important;}
+
+.preloader-wrapper{margin-top:30px;}
+
