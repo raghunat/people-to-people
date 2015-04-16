@@ -19,10 +19,10 @@ var mongoose = require('mongoose');
 var cardSchema = mongoose.Schema({
     card: {
 		      cardPicture: String,
-		      cardLabel: Number,
-		      cardWins: Number,
-		      timesPlayed: Number,
-	      	      userWinner: // user.Id
+		      cardLabel: Number,	
+		      cardWins: Number,   	//Number of wins with this card used
+		      timesPlayed: Number,      //Number of times the card was played in total
+	      	      userWinner: // user.Id    //User who won the round
     }
 });
 
