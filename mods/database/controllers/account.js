@@ -26,7 +26,7 @@ AccountController.prototype.hashPassword = function (password, salt, callback) {
     this.crypto.pbkdf2(password, salt, iterations, keyLen, callback);
 };
 
-//Log on as a user if email and password is correct.
+// Log on as a user if email and password is correct.
 // If correct, the method will add private session variable in the controller.
 AccountController.prototype.logon = function(email, password, callback) {
 
