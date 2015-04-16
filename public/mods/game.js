@@ -1,20 +1,27 @@
 var Game = (function() {
-  var variable = {
+  var socket = {
 
   };
+  
+
 
   // "Global" "Protected" variables
-
+	
+	//calls Geolocation function in order to use
+	   Geolocation();
 
 
   return {
-      functionName: function (argument) {
+      getIO: function (enteringWaitingRoom, playerID, Geolocation) {
         // body...
       },
-      functionName: function () {
+      emitIO: function (displayWaitingRoom, timeToNextGame) {
         // body...
       },
-      functionName: function () {
+      : function () {
+        // body...
+      }
+	  functionName: function () {
         // body...
       }
   }

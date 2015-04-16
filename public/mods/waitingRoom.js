@@ -17,28 +17,30 @@
 //scaffold object for them to fill out with code. 
 
 
-var watingRoom = (function() {
-  var variable = {
-
-  };
-
-  // "Global" "Protected" variables
-
-
+var WatingRoom = (function() {
+ // "Global" "Protected" variables
+ var io = {
+	require('socket.io');
+ }
+	//calls Geolocation function in order to use
+	   Geolocation();
 
   return {
-      functionName: function (argument) {
+      socket.on: function (enteringWaitingRoom, playerID, Geolocation) {
         // body...
       },
-      functionName: function () {
+      : function (displayWaitingRoom, timeToNextGame) {
         // body...
       },
-      functionName: function () {
+      : function (playerExitedClient, playerID) {
+        // body...
+      }
+	  functionName: function (gameStart, SpecificRole) {
         // body...
       }
   }
 })() ;
 
 
-waitingRoom.functionName()
+//WaitingRoom.functionName()
 
