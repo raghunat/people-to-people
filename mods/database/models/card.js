@@ -20,6 +20,9 @@ var cardSchema = mongoose.Schema({
     card: {
 		      cardPicture: String,
 		      cardLabel: Number,
+		      cardWins: Number,
+		      timesPlayed: Number,
+	      	      userWinner: // user.Id
     }
 });
 
