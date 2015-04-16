@@ -1,28 +1,25 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> bd455efa839b47183aeb867fcefee81e5830929f
 var playerLayer = require('./playerLayer.js');
 var gamesArray = playerLayer.makeGroups(peopleArray);
 
 var waitingRoom = [];
 var gamesArray;
+var cardsArray;
 
 
-io.on('enter waiting room', function(data){
-	//Data should have two properties, playerID and Location
+io.on('enter waiting room', function(playerID, location){
+	//Pass player ID and location that the player got from geolocator
 	//Code to connect to database, get name of player, get score for player, get lastKing if we want to, add to data object
 });
 
 
 //When the database has returned the player info, add player to the game room player array,
-something.on('Database Returned Player Info' function(data){
+databasecallback.on('Database Returned Player Info' function(playerID, data){
 	if(data.valid){
 	waitingRoom.push(data);
 	//Emit to client to indicate the waiting room has been joined, emit to client time until next round of games
-	io.emit('data.playerID', "displayWaitingRoom" );
+	io.emit(data.playerID, "displayWaitingRoom" );
 	} else {
-	io.emit('data.PlayerID', "Error connecting to database");
+	io.emit(PlayerID, "Error connecting to database");
 	}
 });
 
@@ -46,14 +43,20 @@ function prepareGames(waitingRoom){
 		gamesArray.append(playerLayer.makeGroups(regions[i]));
 	}
 	
+	//Get a set of cards
+	getNewCardsArray()
+};
+
+
+newCardsArrayCallback(cardArray){
 	//Call assignCards for each geolocation group
 	playerLayer.assignCards(gamesArray, cardArray);
 
 	//Pass gamesArray to game starting function;
 	startGames(gamesArray);
-};
+}
 
-function gamesArray(){
+function startGames(gamesArray){
 		//io.emit: role of player
 		//io.emit: cards if pawn
 		//io.on: Card picked : remove all other cards from player object, add player object to a submitted object
