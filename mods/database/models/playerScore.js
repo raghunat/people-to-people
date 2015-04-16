@@ -12,10 +12,9 @@ var user = require('user');
 
 var playerScoreSchema = mongoose.Schema({
 	playerScore: {
-		gameScore = [cards],
-		overallScore: Number,
-		cardId: cards.Types.ObjectId,
-		userId: user.Types.ObjectId
+		gameScore = [cards],		// Array of Cards user has won in current game
+		overallScore: Number,		// Overall Score user has gained
+		userId: user.Types.ObjectId	// UserId, email address can also be used as reference
 	}
 });
 
