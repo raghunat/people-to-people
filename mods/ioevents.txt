@@ -4,7 +4,7 @@ io.emit('displayWaitingRoom', timeToNextGame)
 
 io.on('playerExitedClient', playerID)
 
-io.emit('playerRole', "Specified Role")
+io.emit('gameStart', "Specified Role")
 
 
 if pawn
@@ -17,3 +17,4 @@ io.emit('playerSelections', playerSelectionsObject)
 io.on('kingChoice', indexOfWinner)
 
 io.emit('results', playerSelectionObjectWithWinner)
+
