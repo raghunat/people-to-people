@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var signup = require('../mods/database/controllers/account.js')
 
 function authenticate(name, pass, fn) {
     if (!module.parent) console.log('authenticating %s:%s', name, pass);
@@ -54,30 +55,14 @@ router.get("/signup", function (req, res) {
 });
 
 router.post("/signup", userExist, function (req, res) {
-    var password = req.body.password;
-    var username = req.body.username;
-
-    hash(password, function (err, salt, hash) {
-        if (err) throw err;
-        var user = new User({
-            username: username,
-            salt: salt,
-            hash: hash,
-        }).save(function (err, newUser) {
-            if (err) throw err;
-            authenticate(newUser.username, password, function(err, user){
-                if(user){
-                    req.session.regenerate(function(){
-                        req.session.user = user;
-                        req.session.success = 'Authenticated as ' + user.username + 
-						' click to <a href="/logout">logout</a>. ' + ' You may now access 
-						<a href="/restricted">/restricted</a>.';
-                        res.redirect('/');
-                    });
-                }
-            });
-        });
+    AccountController.register(req.body,function(err,result){
+        if (err)
+            res.redirect("/");
+        }else{
+        res.render("profile");
+        };
     });
+
 });
 
 router.get("/login", function (req, res) {
