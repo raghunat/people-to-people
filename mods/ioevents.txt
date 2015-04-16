@@ -1,0 +1,19 @@
+io.on('enteringWaitingWaitingRoom', playerID, Geolocation)
+
+io.emit('displayWaitingRoom')
+
+io.on('playerExitedClient', playerID)
+
+io.emit('playerRole', "Specified Role")
+
+
+if pawn
+io.emit('cards', cardsArray)
+
+io.on('cardPicked', playerID, cardIndex)
+
+io.emit('playerSelections', playerSelectionsObject)
+
+io.on('kingChoice', indexOfWinner)
+
+io.emit('results', playerSelectionObjectWithWinner)
