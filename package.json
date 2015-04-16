@@ -13,7 +13,9 @@
     "express": "~4.12.2",
     "jquery-browserify": "^1.8.1",
     "jquery-mousewheel": "^3.1.12",
+    "mongoose": "^4.0.1",
     "morgan": "~1.5.1",
+    "node-uuid": "^1.4.3",
     "serve-favicon": "~2.2.0"
   }
 }

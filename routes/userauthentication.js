@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var signup = require('../mods/database/controllers/account.js')
+var User = require('../mods/database/models/user.js');
+var AccountController = new require('../mods/database/controllers/account.js')(User);
 
 function authenticate(name, pass, fn) {
     if (!module.parent) console.log('authenticating %s:%s', name, pass);
@@ -37,15 +38,6 @@ function requiredAuthentication(req, res, next) {
 
 
 
-router.get("/", function (req, res) {
-
-    if (req.session.user) {
-        res.send("Welcome " + req.session.user.username + "<br>" + "<a href='/logout'>logout</a>");
-    } else {
-        res.send("<a href='/login'> Login</a>" + "<br>" + "<a href='/signup'> Sign Up</a>");
-    }
-});
-
 router.get("/signup", function (req, res) {
     if (req.session.user) {
         res.redirect("/");
@@ -54,9 +46,9 @@ router.get("/signup", function (req, res) {
     }
 });
 
-router.post("/signup", userExist, function (req, res) {
+router.post("/signup", function (req, res) {
     AccountController.register(req.body,function(err,result){
-        if (err)
+        if (err){
             res.redirect("/");
         }else{
         res.render("profile");
@@ -65,9 +57,6 @@ router.post("/signup", userExist, function (req, res) {
 
 });
 
-router.get("/login", function (req, res) {
-    res.render("login");
-});
 
 router.post("/login", function (req, res) {
     authenticate(req.body.username, req.body.password, function (err, user) {
@@ -76,9 +65,7 @@ router.post("/login", function (req, res) {
             req.session.regenerate(function () {
 
                 req.session.user = user;
-                req.session.success = 'Authenticated as ' + user.username + ' 
-				click to <a href="/logout">logout</a>. ' + ' You may now access 
-				<a href="/restricted">/restricted</a>.';
+                req.session.success = 'Authenticated as ' + user.username + 'click to <a href="/logout">logout</a>. ' + ' You may now access <a href="/restricted">/restricted</a>.';
                 res.redirect('/');
             });
         } else {
