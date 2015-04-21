@@ -1,6 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+var Geo = require('./geolocation');
+console.log(typeof geolocation.getLocation);
+
+var Waiting = require('./waitingRoom');
+console.log(typeof waitingRoom.Fu1);
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'People-to-People' });
@@ -12,6 +18,16 @@ router.get('/', function(req, res, next) {
 router.get('/developer', function(req, res, next) {
   res.render('developer', { title: 'Developer' });
 });
+
+router.get('/howToPlay', function(req, res, next) {
+  res.render('HowToPlay', { title: 'How to play' });
+});
+
+/* For About us page
+router.get('/aboutUs', function(req, res, next) {
+  res.render('aboutUs', { title: 'About us' });
+});
+*/
 
 router.get('/appLogin', function(req, res, next) {
   res.render('appLogin', { title: 'appLogin' });
