@@ -12,9 +12,9 @@ var mongoose = require('mongoose');
 
 var gameSchema = mongoose.Schema({
     gameSession: {
-        gameCreatedAt: { type: Date };
-        gameLocation: /*however the location is saved in the module*/;
-        gamePlayers: String ;
+        gameCreatedAt:  Date;
+        gameLocation: Array;
+        gamePlayers: Array ;
 
     }
 });
