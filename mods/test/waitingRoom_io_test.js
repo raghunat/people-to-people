@@ -2,7 +2,7 @@ var io = require('socket.io-client');
 var should = require('should');
 
 describe('Testing Socket IO connection', function () {
-  this.timeout(30000); //keep alive for 30 secs
+  this.timeout(30000); //keep alive for 30 secs or until done
   it('should connect to a running instance', function (done) {
     var client = io.connect('http://localhost:3000/waiting-room'); // Notice /Namespace
 
