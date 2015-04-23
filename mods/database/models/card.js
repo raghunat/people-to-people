@@ -7,7 +7,6 @@ var cardSchema = mongoose.Schema({
 		      cardLabel: Number,
 			  cardWins: Number, //Number of times card wins
 			  timesPlayed: Number //Total number of times played
-			  //userWinner: user.Id //User who won the round
     }
 });
 
