@@ -23,7 +23,7 @@ var gameSchema = mongoose.Schema({
 module.exports = mongoose.model('game', gameSchema);
 
 //game players, game location, error
-gameSession.save(function(gameSession, err ){
+gameSession.save(function(err, gameSession){
   if (err) return console.error(err);
   gameSession.save();
 
