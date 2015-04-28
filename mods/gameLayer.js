@@ -1,6 +1,6 @@
 var gameLayer = {
 
-//var Cards = require('./database/models/card.js');
+//var Card = require('./database/models/card.js');
 
 
 
