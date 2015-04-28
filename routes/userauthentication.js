@@ -47,6 +47,7 @@ router.get("/signup", function (req, res) {
 });
 
 router.post("/signup", function (req, res) {
+  console.log(AccountController);
     AccountController.register(req.body,function(err,result){
         if (err){
             res.redirect("/");

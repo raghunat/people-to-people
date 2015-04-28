@@ -28,7 +28,7 @@ router.get('/howToPlay', function (req, res, next) {
 
 /* For About us page
 router.get('/aboutUs', function(req, res, next) {
-  res.render('aboutUs', { title: 'About us' });
+res.render('aboutUs', { title: 'About us' });
 });
 */
 

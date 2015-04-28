@@ -1,12 +1,14 @@
+var crypto = require('crypto');    //using to generate password HASH
+var uuid = require('node-uuid');   //using for unique identifiers.
+var ApiResponse = require('../models/apiResponse.js');
+var ApiMessages = require('../models/apiMessages.js');
+var UserProfileModel = require('../models/userProfile.js');
 var AccountController = function (userModel, session, mailer) {
-    this.crypto = require('crypto');    //using to generate password HASH
-    this.uuid = require('node-uuid');   //using for unique identifiers.
-    this.ApiResponse = require('../models/apiResponse.js');
-    this.ApiMessages = require('../models/apiMessages.js');
-    this.UserProfileModel = require('../models/userProfile.js');
+
     this.userModel = userModel;
     this.session = session;
     this.mailer = mailer;
+    return this;
 };
 
 // method to return a reference to the controllers private session.
@@ -20,7 +22,7 @@ AccountController.prototype.setSession = function (session) {
 
 //Hashing our password using crypto
 AccountController.prototype.hashPassword = function (password, salt, callback) {
-    // We use pbkdf2 to hash and iterate 10k times by default 
+    // We use pbkdf2 to hash and iterate 10k times by default
     var iterations = 10000,
         keyLen = 64; // 64 bit.
     this.crypto.pbkdf2(password, salt, iterations, keyLen, callback);
@@ -90,7 +92,7 @@ AccountController.prototype.register = function (newUser, callback) {
                 if (err) {
                     return callback(err, new me.ApiResponse({ success: false, extras: { msg: me.ApiMessages.DB_ERROR } }));
                 }
-                    
+
                 if (numberAffected === 1) {
 
                     var userProfileModel = new me.UserProfileModel({
@@ -106,7 +108,7 @@ AccountController.prototype.register = function (newUser, callback) {
                     }));
                 } else {
                     return callback(err, new me.ApiResponse({ success: false, extras: { msg: me.ApiMessages.COULD_NOT_CREATE_USER } }));
-                }             
+                }
 
             });
         }
@@ -135,7 +137,7 @@ AccountController.prototype.resetPassword = function (email, callback) {
             return callback(err, new me.ApiResponse({ success: true, extras: { passwordResetHash: passwordResetHash } }));
         } else {
             return callback(err, new me.ApiResponse({ success: false, extras: { msg: me.ApiMessages.EMAIL_NOT_FOUND } }));
-        }        
+        }
     })
 };
 
@@ -169,7 +171,7 @@ AccountController.prototype.resetPasswordFinal = function (email, newPassword, p
                 return callback(err, new me.ApiResponse({ success: false, extras: { msg: me.ApiMessages.COULD_NOT_RESET_PASSWORD } }));
             } else {
                 return callback(err, new me.ApiResponse({ success: true, extras: null }));
-            }                
+            }
         });
     });
 };
