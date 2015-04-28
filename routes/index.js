@@ -57,10 +57,12 @@ router.get('/game', function (req, res, next) {
   });
 });
 
-/* GET waiting room. */
-router.get('/waiting', function (req, res, next) {
-  res.render('waitingRoom', {
-    title: 'Waiting Room'
+
+
+/* GET game result. */
+router.get('/result', function (req, res, next) {
+  res.render('gameResult', {
+    title: 'Game Result'
   });
 });
 
