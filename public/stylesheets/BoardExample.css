@@ -3,78 +3,89 @@
 .brand-logo{margin: 0 0 0 10px;}
 
 #player-cards {
-    background-color: #ddd;
-    padding-top:20px;
+    padding:30px;
     text-align:center;
-    background-image: url('/images/board.png');
-    background-size: 100% auto;
-    border-top: 5px solid #4B4E5A;
+    height:auto;
+   /* background-image: url('/images/board.png');
+    background-size: 100% 100%; */
 }
 
-.owl-nav{
-    text-align:center;
-}
-.owl-prev, .owl-next{
-    background-color: #4B4E5A;
-    color:white;
-    width:100px;
+.item{
     display:inline-block;
-    padding:5px;
-    text-align:center;
-    margin:10px;
-    cursor: pointer;
+    padding:10px;
 }
-
-.owl-prev:hover, .owl-next:hover{
-    background-color:white;
-    color: #4B4E5A;
-}
-
-@media only screen and (max-width: 768px) {
-    .owl-prev, .owl-next{
-        width:40%;
-        padding:10px 5%;
-    }
-}
-
 
 #player-cards .item img{
-    box-shadow: 0 0 3px #303030;
+    width:100%;
+    margin:10px;
 }
 
-.card-title{
-    background-color:#8B8CA6 !important;
-    width:inherit;
-    text-align:center;
-    color:white;
-    padding:30px;
+
+/* select and close buttons */
+.modal .modal-footer .btn{
+    background-color:orange!important;
+    float:none !important;
 }
 
+.modal .modal-footer .btn:hover{
+    background-color:white !important;
+}
+
+/* Title, Topic Timer Row */
+.game-info{
+	text-align: center;
+    background-color:white;
+}
+
+/* Title, Topic Timer Sections */
 .topic{
-    font-size: 4em;
     float:left;
     width:33%;
 }
 
 
-.btn{
-    background-color:#4B4E5A !important;
-    width: 75%;
-    padding: 10px auto !important;
+/* POP UP ON IMAGE CLICK */
+
+.modal{
+    overflow:hidden;
+    padding:0;
+    margin:0;
+    max-height:100% !important;
 }
 
-.btn:hover{
-    background-color:#8B8CA6 !important;
+.modal-content{
+  padding:0;
+  height:auto;
+  text-align:center;
+
 }
 
-.row{
-	text-align: center;
+.modal-footer{
+    text-align:center !important;
 }
 
-#SelectedImg{
-    width: 75%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 300px 0 300px 0;
-    border: dashed;
+.modal-image{
+    height:200% !important;
+}
+
+/* card title on popup */
+.modal h4{
+    margin-top:20px !important;
+}
+
+@media only screen and (max-width:768px){
+    h1{
+        font-size:6vw !important;
+    }
+    h4{
+        font-size:4vw !important;
+    }
+    .modal-content{
+       
+    }
+    
+    .modal-image{
+        width:100%;
+    }
+    .modal{width:100% !important;}
 }

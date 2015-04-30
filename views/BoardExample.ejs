@@ -6,39 +6,19 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/BoardExample.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
-    <link rel="stylesheet" href="/owl-carousel/assets/owl.carousel.css">
 </head>
 
 <body>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-    <script src="/owl-carousel/owl.carousel.min.js"></script>
+
  <nav>
 
 	<script type="text/javascript">
     $( document ).ready(function(){
         $(".button-collapse").sideNav();
-
-        var owl = $("#player-cards");
-        owl.owlCarousel({
-            loop:true,
-            stagePadding: 20,
-            margin:20,
-            items:5,
-            nav:true,
-            responsive:{
-                0:{
-                    items:3
-                },
-                600:{
-                    items:4
-                },
-                800:{
-                    items:5
-                }
-            },
-        });
+        $('.modal-trigger').leanModal();
     })
     </script>
 
@@ -47,90 +27,29 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Profile</a></li>
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="#">Profile</a></li>
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
       </ul>
     </div>
 
  </nav>
 
-        <div id="player-cards" class="owl-carousel z-depth-1">
-      <div class="item">
-          <a href="#">
-              <img id="Image1 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
-      <div class="item">
-          <a href="#">
-              <img id="Image2 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
-      <div class="item">
-          <a href="#">
-              <img id="Image3 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
-      <div class="item">
-          <a href="#">
-              <img id="Image4 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
-    <div class="item">
-          <a href="#">
-              <img id="Image5 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
-    <div class="item">
-          <a href="#">
-              <img id="Image6 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
-	<div class="item">
-          <a href="#">
-              <img id="Image7 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
-	<div class="item">
-          <a href="#">
-              <img id="Image8 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
-	<div class="item">
-          <a href="#">
-              <img id="Image9 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
-	<div class="item">
-          <a href="#">
-              <img id="Image10 src="/images/ExamplePic.gif">
-              <span class="card-title">Card Title</span>
-          </a>
-      </div>
 
-    </div>
 
-    <div class="row">
+    <div class="row game-info z-depth-1">
     <div class="col s12 align-center valign-wrapper">
             <h4 class="col s4 topic valign" id="PlayerStatus">
-            King/Pawn
+            Queen/Pawn
             </h4>
 
 
             <h1 class="col s4 center-align topic valign" id="Topic">
             Topic
             </h1>
+
 
             <h4 class="col s4 topic valign" id="GameTimer">
             Timer
@@ -140,15 +59,181 @@
     </div>
 
 
-		<div id="SelectedImg">Your Picture Here</div>
+<div id="player-cards" class="row">
+    <div class="item col s4 m3 l2">
+        <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal1">
+            <img id="Image1" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+    </div>
+    <div class="item col s4 m3 l2">
+        <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal2">
+            <img id="Image2" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+      </div>
+    <div class="item col s4 m3 l2">
+          <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal3">
+            <img id="Image3" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+    </div>
+    <div class="item col s4 m3 l2">
+        <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal4">
+            <img id="Image4" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+    </div>
+    <div class="item col s4 m3 l2">
+        <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal5">
+            <img id="Image5" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+    </div>
+    <div class="item col s4 m3 l2">
+        <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal6">
+            <img id="Image6" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+    </div>
+	<div class="item col s4 m3 l2">
+        <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal7">
+            <img id="Image7" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+    </div>
+	<div class="item col s4 m3 l2">
+        <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal8">
+            <img id="Image8" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+    </div>
+	<div class="item col s4 m3 l2">
+        <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal9">
+            <img id="Image9" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+    </div>
+    <div class="item col s4 m3 l2">
+        <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal10">
+            <img id="Image10" class="z-depth-1"  src="/images/ExamplePic.gif">
+        </a>
+    </div>
 
-	<br>
+    <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <img id="Image1" class="modal-image" src="/images/ExamplePic.gif">
+              <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
 
-	<div class="row">
-		<a class="waves-effect waves-light btn" id="button">Select</a>
-	</div>
+              <div id="modal2" class="modal">
+            <div class="modal-content">
+              <img id="Image2" class="modal-image" src="/images/ExamplePic.gif">
+            <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
 
-	<br>
+              <div id="modal3" class="modal">
+            <div class="modal-content">
+              <img id="Image3" class="modal-image" src="/images/ExamplePic.gif">
+              <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
+
+              <div id="modal4" class="modal">
+            <div class="modal-content">
+              <img id="Image4" class="modal-image" src="/images/ExamplePic.gif">
+                <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
+
+              <div id="modal5" class="modal">
+            <div class="modal-content">
+              <img id="Image5" class="modal-image" src="/images/ExamplePic.gif">
+                <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
+
+              <div id="modal6" class="modal">
+            <div class="modal-content">
+              <img id="Image6" class="modal-image" src="/images/ExamplePic.gif">
+                <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
+
+              <div id="modal7" class="modal">
+            <div class="modal-content">
+              <img id="Image7" class="modal-image" src="/images/ExamplePic.gif">
+                <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
+
+              <div id="modal8" class="modal">
+            <div class="modal-content">
+              <img id="Image8" class="modal-image" src="/images/ExamplePic.gif">
+                <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
+
+              <div id="modal9" class="modal">
+            <div class="modal-content">
+              <img id="Image9" class="modal-image" src="/images/ExamplePic.gif">
+                <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
+
+              <div id="modal10" class="modal">
+            <div class="modal-content">
+              <img id="Image10" class="modal-image" src="/images/ExamplePic.gif">
+                <h4>Card Title</h4>
+            </div>
+            <div class="modal-footer">
+                <button href="#!" class="btn modal-action btn-flat">Select</button>
+                <button href="#!" class="btn modal-action modal-close btn-flat">Close</button>
+            </div>
+          </div>
+
+</div> <!-- row -->
+
 
 
 </body>

@@ -18,29 +18,43 @@
 
 
 var WatingRoom = (function() {
- // "Global" "Protected" variables
- var io = {
-	require('socket.io');
+
+ var socket = io('/waiting-room');
+
+ socket.on('connect', function(){
+ 
+ var location = Geolocation.get();
+
+ socket.emit('register', "ID", location);
+ 
+ 
  }
-	//calls Geolocation function in order to use
-	   Geolocation();
+ 
+  socket.on('connect', function(){
+  
+  socket.emit('playerExitedClient', "ID");
+  
+ }
+ 
+ 
+ 
 
   return {
-      socket.on: function (enteringWaitingRoom, playerID, Geolocation) {
-        // body...
-      },
-      : function (displayWaitingRoom, timeToNextGame) {
-        // body...
-      },
-      : function (playerExitedClient, playerID) {
-        // body...
-      }
-	  functionName: function (gameStart, SpecificRole) {
-        // body...
-      }
+  
+	displayWaitingRoom: function (timeToNextGame) {
+	// body...
+	},
+	gameStart: function ("Specified Role") {
+	// body...
+	}
+
+}
+  
+  
+      
   }
 })() ;
 
 
-//WaitingRoom.functionName()
+
 

@@ -21,7 +21,7 @@ var playerScoreSchema = mongoose.Schema({
 // Makes the model for the schema useful
 module.exports = mongoose.model('PlayerScore', playerScoreSchema);
 // Updating User's gameScore and overallScore based off user's email which is unique.
-db.score.update(
+db.score.update(    //Kyle's increment of overallScore
 { email: "abc123@gmail.com" },
-{ $inc: { score: 1, overallScore: 1 } }
+{ $inc: { overallScore: 1 } }
 )

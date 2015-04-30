@@ -7,6 +7,19 @@
 var app = require('../app');
 var debug = require('debug')('people-to-people:server');
 var http = require('http');
+var mongoose = require('mongoose');
+
+/*
+connect to the data base
+*/
+
+mongoose.connect('mongodb://dal:dal@ds061158.mongolab.com:61158/gamething');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+
+});
 
 
 /**

@@ -1,30 +1,30 @@
-/******************************************************************************
-card.js
-Author: mcdo7187@fredonia.edu
-Date: 4/6/2015
-Version: 0.0.5
-
-
-Cards (model)
-
->> picID
->> pic
->> label
-
-*******************************************************************************/
-
 var mongoose = require('mongoose');
-
+var Schema = mongoose.Schema;
 //Creating a schema for cards
-var cardSchema = mongoose.Schema({
-    card: {
-		      cardPicture: String,
-		      cardLabel: Number,	
-		      cardWins: Number,   	//Number of wins with this card used
-		      timesPlayed: Number,      //Number of times the card was played in total
-	      	      userWinner: // user.Id    //User who won the round
-    }
+var cardSchema = new Schema({
+  cardPicture: String,
+  cardLabel: String,
+  cardWins: Number, //Number of times card wins
+  timesPlayed: Number //Total number of times played
+
 });
 
 // Makes the model for the schema useful
 module.exports = mongoose.model('Card', cardSchema);
+
+/*** Methods ***/
+
+// Count number of times card is chosen
+// TODO Fix this is wrong
+// cardSchema.methods.incChosen = function (cb) {
+//   $inc: {
+//     chooseCount: 1
+//   }
+// }
+
+// // Counts number of times card has won
+// cardSchema.methods.incWon = function (cb) {
+//   $inc: {
+//     winCount: 1
+//   }
+// }
