@@ -10,6 +10,7 @@ module.exports = function (io) {
   // create namespace
   var gameLayer = require('../gameLayer.js');
   var wr = io.of('/waiting-room');
+  var timerRunning = false;
 
   wr.on('connection', function (socket) {
 
@@ -79,16 +80,18 @@ module.exports = function (io) {
       //No need to do anything, as the disconnect even already removes the socket from the room, and we are basing the game on the sockets.
     }
 
-    var timer = function () {
+    var timer = function(){
       console.log("Start Timer");
-      setTimeout(function () {
+      setTimeout(function() {
         console.log("Checking to see if there are enough players to start game");
-        if (wr.sockets.length > 1) {
-          gameLayer.prepareGames(wr);
+        if(wr.sockets.length > 1){
+          gameLayer.prepareGames(wr);//Currently plassing the entire waiting room to the game layer
+        } else if(wr.sockets.length == 0) {
+          timerRunning = false; //Stop the timer if there are no players at all.
         } else {
           console.log("There are not enough players to start a game, reseting countdown");
+          timer(); //Reset timer if there are too few players to start a game
         }
-        timer();
       }, 1000 * 5);
     }
   });
