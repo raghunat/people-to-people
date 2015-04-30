@@ -72,7 +72,11 @@ router.post("/signup", function (req, res) {
         if (err) {
           res.redirect('/');
         } else {
-          res.redirect('/profile');
+          req.session.regenerate(function () {
+            req.session.user = user;
+            req.session.success = 'Authenticated as ' + user.email + 'click to <a href="/logout">logout</a>. ' + ' You may now access <a href="/restricted">/restricted</a>.';
+            res.redirect('/profile');
+          });
         }
       });
     });
@@ -106,7 +110,7 @@ router.get('/logout', function (req, res) {
 });
 
 router.get('/profile', requiredAuthentication, function (req, res) {
-  res.send('Profile page of ' + req.session.user.username + '<br>' +
+  res.send('Profile page of ' + req.session.user.firstName + '<br>' +
     ' click to <a href="/logout">logout</a>');
 });
 
