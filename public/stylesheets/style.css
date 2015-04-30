@@ -1,6 +1,6 @@
 body {
  /*  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;  */
-    background-color:#DFE4EA;
+    background-color:#EBE3E0;
 }
 
 .panel{width:100%; height:100%;}
@@ -9,7 +9,7 @@ h1{color: #4B4E5A;}
 
 /*.tabs{ background:white; opacity:0.5; font-size: 18px; z-index:9999009;}*/
 
-.tabs{background:#4B4E5A; z-index:9999009;}
+.tabs{background:#f9a646; z-index:9999009;}
 
 .tab, .tab a{color:white!important;}
 
@@ -18,7 +18,7 @@ h1{color: #4B4E5A;}
 .tabs .indicator{background-color:white !important;}
 
 /* title/login */
-header{background-color:#4B4E5A; margin:0 !important;  padding:15px;}
+header{background-color:#393939; margin:0 !important;  padding:15px;}
 .logo, .logo a{ margin-top: 20px; float:left; color:white; font-size:30px;}
 
 
