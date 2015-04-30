@@ -90,4 +90,23 @@ router.post('/card', function (req, res) {
     });
   });
 });
+
+// Card generation routes
+router.get('/category', function (req, res) {
+  res.render('category');
+});
+
+router.post('/category', function (req, res) {
+
+  var cat = new Category();
+  cat.text = req.body.text;
+  cat.timesUsed = 0;
+  cat.save(function (err) {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.json("success!");
+    }
+  });
+});
 module.exports = router;
