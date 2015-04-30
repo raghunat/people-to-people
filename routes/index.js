@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var Card = require('../mods/database/models/card');
+var fs = require('fs');
 
 //var Geo = require('./geolocation');
 
@@ -66,4 +68,26 @@ router.get('/result', function (req, res, next) {
   });
 });
 
+// Card generation routes
+router.get('/card', function (req, res) {
+  res.render('card');
+});
+
+router.post('/card', function (req, res) {
+  console.log(req.files);
+  fs.readFile(req.files.cardPicture.path, function (err, data) {
+    var card = new Card();
+    card.cardPicture = new Buffer(data, 'binary').toString('base64');
+    card.cardLabel = req.body.cardLabel;
+    card.cardWins = 0;
+    card.timesPlayed = 0;
+    card.save(function (err) {
+      if (err) {
+        res.status(500).json(err);
+      } else {
+        res.json("success!");
+      }
+    });
+  });
+});
 module.exports = router;
