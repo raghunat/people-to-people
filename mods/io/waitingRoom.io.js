@@ -54,8 +54,12 @@ module.exports = function (io) {
           //Stuff from the DB team
           socket._playerName = user.firstName + ' ' + user.lastName;
           //socket._playerScore =
-          //socket._lastRole =
-          timer();
+          socket._lastRole = 'Pawn'; //setting last role, as we don't have the DB access setup to pull this yet, and gamelayer needs it
+          //Start the timer when a player connects if its not already started.
+          if(timerRunning == false){
+            timerRunning = true;
+            timer();
+          }
           console.log("Player Registered");
           console.log("Room Size: " + wr.sockets.length);
           //TODO REMOVE TESTING ITEM
