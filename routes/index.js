@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Card = require('../mods/database/models/card');
+var Category = require('../mods/database/models/category');
 var fs = require('fs');
 
 //var Geo = require('./geolocation');
