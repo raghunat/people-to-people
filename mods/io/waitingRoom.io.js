@@ -43,7 +43,9 @@ module.exports = function (io) {
       socket._playerId = id;
       socket._location = location;
       User
-        .findOne({})
+        .findOne({
+          email: id
+        })
         .exec(function (err, user) {
           if (err) {
             return console.log('ERROR:', err);
@@ -57,7 +59,7 @@ module.exports = function (io) {
           //socket._playerScore =
           socket._lastRole = 'Pawn'; //setting last role, as we don't have the DB access setup to pull this yet, and gamelayer needs it
           //Start the timer when a player connects if its not already started.
-          if(timerRunning == false){
+          if (timerRunning == false) {
             timerRunning = true;
             timer();
           }
@@ -80,13 +82,13 @@ module.exports = function (io) {
       //No need to do anything, as the disconnect even already removes the socket from the room, and we are basing the game on the sockets.
     }
 
-    var timer = function(){
+    var timer = function () {
       console.log("Start Timer");
-      setTimeout(function() {
+      setTimeout(function () {
         console.log("Checking to see if there are enough players to start game");
-        if(wr.sockets.length > 1){
-          gameLayer.prepareGames(wr);//Currently plassing the entire waiting room to the game layer
-        } else if(wr.sockets.length == 0) {
+        if (wr.sockets.length > 1) {
+          gameLayer.prepareGames(wr); //Currently plassing the entire waiting room to the game layer
+        } else if (wr.sockets.length == 0) {
           timerRunning = false; //Stop the timer if there are no players at all.
         } else {
           console.log("There are not enough players to start a game, reseting countdown");
