@@ -1,0 +1,42 @@
+body{
+    background-image:url("/images/board.png");
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+.nav-wrapper{background-color: #393939;}
+
+.brand-logo{margin: 0 0 0 10px;}
+
+.container{
+    text-align:left; 
+    background-color:#f1f2f5;
+    padding:60px !important;
+    height:100vh;
+}
+
+h1{color:#485377;
+    margin-bottom:79px !important; 
+    padding:40px;
+    overflow:hidden;
+}
+
+h1:before,
+h1:after {
+    background-color: #F9A646;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+}
+h1:before {
+    width:30px;
+    right: 0.5em;
+}
+h1:after {
+    left: 0.5em;
+    width: 100%;
+    margin-right: -50%;
+}

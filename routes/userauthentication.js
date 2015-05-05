@@ -32,7 +32,7 @@ function requiredAuthentication(req, res, next) {
     next();
   } else {
     req.session.error = 'Access denied!';
-    res.redirect('/login');
+    res.redirect('/');
   }
 }
 
@@ -110,8 +110,13 @@ router.get('/logout', function (req, res) {
 });
 
 router.get('/profile', requiredAuthentication, function (req, res) {
-  res.send('Profile page of ' + req.session.user.firstName + '<br>' +
-    ' click to <a href="/logout">logout</a>');
+    res.render('profile', {
+        title: 'Profile Page',
+        firstName: req.session.user.firstName,
+        lastName: req.session.user.lastName,
+        email: req.session.user.email
+    });
+ 
 });
 
 module.exports = router;

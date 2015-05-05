@@ -5,13 +5,13 @@ body{
     padding:0;
 }
 
-.nav-wrapper{background-color: #4B4E5A;}
+.nav-wrapper{background-color: #393939;}
 
 .brand-logo{margin: 0 0 0 10px;}
 
 .container{
     text-align:center; 
-    background-color:#DFE4EA;
+    background-color:#f1f2f5;
     padding:60px !important;
 }
 
@@ -21,7 +21,15 @@ h1{margin-bottom:79px !important;}
 
 .progress{background-color:white !important; width:50% !important;}
 
-.indeterminate{background-color:#B7B9C7 !important;}
 
 .preloader-wrapper{margin-top:30px;}
 
+.btn{
+    background-color:#F9A646 !important;
+    width:100%;
+    margin-top:40px;
+}
+
+.btn:hover{
+    background-color:#2c719b !important;
+}

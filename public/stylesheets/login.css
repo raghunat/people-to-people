@@ -10,14 +10,14 @@
    .input-field input[type=text]:focus + label
    .input-field input[type=email]:focus + label,
    .input-field input[type=password]:focus + label{
-     color: #69778D;
+     color: #F9A646;
    }
    /* label underline focus color */
    .input-field input[type=text]:focus,
    .input-field input[type=email]:focus,
    .input-field input[type=password]:focus{
-     border-bottom: 1px solid #69778D;
-     box-shadow: 0 1px 0 0 #69778D;
+     border-bottom: 1px solid #F9A646;
+     box-shadow: 0 1px 0 0 #F9A646;
    }
    /* valid color */
    .input-field input[type=text].valid
@@ -35,13 +35,13 @@
    }
    /* icon prefix focus color */
    .input-field .prefix.active {
-     color: #69778D;
+     color: #2c719b;
    }
 
 .btn{
-    background-color:#4B4E5A !important;
+    background-color:#F9A646 !important;
 }
 
 .btn:hover{
-    background-color:#D3D0CE !important;
+    background-color:#2c719b !important;
 }

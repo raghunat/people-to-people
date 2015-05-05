@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>People to People</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+
+</head>
+
+<body>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+
+<nav>
+
+<script type="text/javascript">
+$( document ).ready(function(){
+  $(".button-collapse").sideNav();
+  $('.parallax').parallax();
+})
+</script>
+
+<div class="nav-wrapper">
+  <a href="#!" class="brand-logo">People to People</a>
+  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+          <li><a href="/">New Game</a></li>
+          <li><a href="/logout">Logout</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/">Home</a></li>
+          <li><a href="/">New Game</a></li>
+          <li><a href="/logout">Logout</a></li>
+  </ul>
+</div>
+
+</nav>
+
+<div class="valign container z-depth-3">
+    <h1><%= title %></h1>
+    
+      <ul class="collection">
+    <li class="collection-item avatar">
+      <i class="mdi-social-person circle blue"></i>
+      <span class="title">Name</span>
+      <p class="flow-text"> <%= firstName %> <%= lastName %>
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <i class="mdi-communication-email circle orange"></i>
+      <span class="title">Email</span>
+      <p class="flow-text"> <%= email %>
+      </p>
+    </li>
+  </ul>
+    
+    
+</div>
+
+
+</body>
+</html>
+

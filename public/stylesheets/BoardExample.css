@@ -1,4 +1,4 @@
-.nav-wrapper{background-color: #4B4E5A;}
+.nav-wrapper{background-color: #393939;}
 
 .brand-logo{margin: 0 0 0 10px;}
 
@@ -23,7 +23,7 @@
 
 /* select and close buttons */
 .modal .modal-footer .btn{
-    background-color:orange!important;
+    background-color:#F9A646!important;
     float:none !important;
 }
 
@@ -34,7 +34,7 @@
 /* Title, Topic Timer Row */
 .game-info{
 	text-align: center;
-    background-color:white;
+    background-color:#343232;
 }
 
 /* Title, Topic Timer Sections */
@@ -43,6 +43,8 @@
     width:33%;
 }
 
+h4{color:#2C719B !important;}
+h1{color:#F9A646 !important;}
 
 /* POP UP ON IMAGE CLICK */
 
