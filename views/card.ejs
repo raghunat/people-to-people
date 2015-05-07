@@ -1,0 +1,38 @@
+ <!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/css/materialize.css">
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+<!-- Compiled and minified JavaScript -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.0/js/materialize.js"></script>
+  
+<link rel='stylesheet' href='/stylesheets/style.css' />   
+<link rel='stylesheet' href='/stylesheets/preloader.css' />   
+<script type="text/javascript" src="/mods/preloader.js"></script>
+
+<!-- form -->
+<h1>Create a Card</h1>
+<h4><em>Card pictures should NOT be landscape ratio'ed, but portrait by default</em></h4>
+
+<form action="/card" method="post" enctype="multipart/form-data">
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" placeholder="Card label" id="label" class="validate" name="cardLabel">
+          <label for="label">Card Label</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="file" placeholder="Card Picture" id="file" class="validate" name="cardPicture">
+          <label for="file">Card Label</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="mdi-content-send"></i>
+            </button>
+  </div>
+</form>

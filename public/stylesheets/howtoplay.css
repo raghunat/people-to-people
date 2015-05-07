@@ -1,10 +1,34 @@
 
-	
-	.verticalLine {
-    border-left: thick solid #ff0000;
-	}
-	
 
+	.verticalLine {
+    background-color:#F9A646;
+	}
+
+h5{color: #2c719b; padding:20px;
+     text-align: left;
+    overflow:hidden;
+}
+
+h5:before,
+h5:after {
+    background-color: #F9A646;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+}
+h5:before {
+    width:30px;
+    right: 0.5em;
+}
+h5:after {
+    left: 0.5em;
+    width: 100%;
+    margin-right: -50%;
+}
+
+.info p{font-size:1.5em; font-weight:300; line-height:180%; padding:20px 0; text-align:justify;}
 /* Tugce, make a new folder under public/images called 'socicon' and put all the files you have linked here in there. Change the urls below accordingly once you do that */
 
 	@font-face {
@@ -16,9 +40,9 @@
          url('/socicon-1.3/socicon.svg#icomoonregular') format('svg');
     font-weight: normal;
     font-style: normal;
- 
+
 }
- 
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     @font-face {
         font-family:si;
@@ -30,8 +54,11 @@
 
 .soc {
     overflow:hidden;
-    margin:0; padding:0;
+    margin-bottom:50px;
+    padding:20px 0;
     list-style:none;
+    text-align:center;
+
 }
 
 .soc li {
@@ -109,5 +136,3 @@
 .soc-rss:before {
     content:',';
 }
-
-

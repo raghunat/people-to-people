@@ -26,15 +26,15 @@
     
     <header class="row z-depth-1">
       <a href="#" class="logo col s12 l6">People to People</a>
-    <form class="col s12 l6 right">
+    <form action="/login" method="post" class="col s12 l6 right">
           
             <div class="input-field  col s12 l5">
-              <input id="login_email" type="email" class="validate">
+              <input id="login_email" type="email" name='email' class="validate">
               <label for="login_email" class="active">Email</label>
             </div>
 
               <div class="input-field  col s12 l5">
-              <input id="login_password" type="password" class="validate">
+              <input id="login_password" name="password" type="password" class="validate">
               <label for="login_password" class="active">Password</label>
             </div>
 

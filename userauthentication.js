@@ -27,7 +27,7 @@ function requiredAuthentication(req, res, next) {
         next();
     } else {
         req.session.error = 'Access denied!';
-        res.redirect('/login');
+        res.redirect('/");
     }
 }
 
@@ -90,12 +90,12 @@ app.post("/login", function (req, res) {
                 req.session.user = user;
                 req.session.success = 'Authenticated as ' + user.username + ' 
 				click to <a href="/logout">logout</a>. ' + ' You may now access 
-				<a href="/restricted">/restricted</a>.';
+				<a href="/restricted">restricted</a>.';
                 res.redirect('/');
             });
         } else {
             req.session.error = 'Authentication failed, please check your ' + ' username and password.';
-            res.redirect('/login');
+            res.redirect('/');
         }
     });
 });
@@ -107,6 +107,14 @@ app.get('/logout', function (req, res) {
 });
 
 app.get('/profile', requiredAuthentication, function (req, res) {
+    res.render('profile', {
+        title: 'Profile Page',
+        firstName: req.session.user.firstName,
+        lastName: req.session.user.lastName,
+        email: req.session.user.email
+    });
+    /*
     res.send('Profile page of '+ req.session.user.username +'<br>'+
 	' click to <a href="/logout">logout</a>');
+    */
 });
