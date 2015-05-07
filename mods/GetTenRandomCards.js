@@ -24,7 +24,7 @@ exports.GetRandomCards = function (cards) {
     var randomCards = cards.splice(random, 1)[0];
     chosenCards.push(randomCards);
     /*comment the following out when moved to project*/
-    console.log(chosenCards[i]);
+    //console.log(chosenCards[i]);
   }
   return chosenCards;
 };

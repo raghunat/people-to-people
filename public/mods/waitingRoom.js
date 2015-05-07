@@ -16,7 +16,7 @@
 
 var WatingRoom = (function () {
 
-  var socket = io('/waiting-room');
+  var socket = io(location.origin + '/waiting-room');
 
   socket.on('connect', function () {
     var location = Geolocation.get();

@@ -68,7 +68,7 @@ router.post("/signup", function (req, res) {
       newUser.passwordHash = req.body.password;
 
       // save
-      newUser.save(function (err) {
+      newUser.save(function (err, user) {
         if (err) {
           res.redirect('/');
         } else {
@@ -110,13 +110,13 @@ router.get('/logout', function (req, res) {
 });
 
 router.get('/profile', requiredAuthentication, function (req, res) {
-    res.render('profile', {
-        title: 'Profile Page',
-        firstName: req.session.user.firstName,
-        lastName: req.session.user.lastName,
-        email: req.session.user.email
-    });
- 
+  res.render('profile', {
+    title: 'Profile Page',
+    firstName: req.session.user.firstName,
+    lastName: req.session.user.lastName,
+    email: req.session.user.email
+  });
+
 });
 
 module.exports = router;

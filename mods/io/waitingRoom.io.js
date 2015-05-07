@@ -11,7 +11,23 @@ module.exports = function (io) {
   var gameLayer = require('../gameLayer.js');
   var wr = io.of('/waiting-room');
   var timerRunning = false;
+  var players = [];
 
+  var timer = function () {
+    console.log("Start Timer");
+    setTimeout(function () {
+      console.log("Checking to see if there are enough players to start game");
+      //console.log(players);
+      if (players.length > 1) {
+        gameLayer.prepareGames(wr, io, players); //Currently plassing the entire waiting room to the game layer
+      } else if (players.length === 0) {
+        timerRunning = false; //Stop the timer if there are no players at all.
+      } else {
+        console.log("There are not enough players to start a game, reseting countdown");
+        timer(); //Reset timer if there are too few players to start a game
+      }
+    }, 1000 * 5);
+  };
   wr.on('connection', function (socket) {
 
     /////////////////////////
@@ -28,8 +44,6 @@ module.exports = function (io) {
      */
     socket.on('disconnect', disconnectEvent);
 
-
-
     ////////////////////
     // Event Handlers //
     ////////////////////
@@ -38,13 +52,13 @@ module.exports = function (io) {
      * Register Event Handler that registers a player for the next game
      * @param {String} id Object ID of the player
      */
-    function registerEvent(id, location) {
-      //look for that id
-      socket._playerId = id;
+    function registerEvent(email, location) {
+      //look for that email
+      socket._playerEmail = email;
       socket._location = location;
       User
         .findOne({
-          email: id
+          email: email
         })
         .exec(function (err, user) {
           if (err) {
@@ -53,18 +67,20 @@ module.exports = function (io) {
           if (!user) {
             return console.log('ERROR could not find the user with id: ', id);
           }
-          console.log(user);
           //Stuff from the DB team
+          socket._email = user.email;
           socket._playerName = user.firstName + ' ' + user.lastName;
           //socket._playerScore =
           socket._lastRole = 'Pawn'; //setting last role, as we don't have the DB access setup to pull this yet, and gamelayer needs it
+          //push the player socket to the array
+          players.push(socket);
           //Start the timer when a player connects if its not already started.
-          if (timerRunning == false) {
+          if (timerRunning === false) {
             timerRunning = true;
             timer();
           }
           console.log("Player Registered");
-          console.log("Room Size: " + wr.sockets.length);
+          console.log("Room Size: " + players.length);
           //TODO REMOVE TESTING ITEM
           wr.to(socket.id).emit('registered', {
             connected: true
@@ -78,23 +94,8 @@ module.exports = function (io) {
     //Disconnect Event Handler
     function disconnectEvent() {
       console.log("Player Disconnected");
-      console.log("Room Size: " + wr.sockets.length);
+      console.log("Room Size: " + players.length);
       //No need to do anything, as the disconnect even already removes the socket from the room, and we are basing the game on the sockets.
-    }
-
-    var timer = function () {
-      console.log("Start Timer");
-      setTimeout(function () {
-        console.log("Checking to see if there are enough players to start game");
-        if (wr.sockets.length > 1) {
-          gameLayer.prepareGames(wr); //Currently plassing the entire waiting room to the game layer
-        } else if (wr.sockets.length == 0) {
-          timerRunning = false; //Stop the timer if there are no players at all.
-        } else {
-          console.log("There are not enough players to start a game, reseting countdown");
-          timer(); //Reset timer if there are too few players to start a game
-        }
-      }, 1000 * 5);
     }
   });
 };

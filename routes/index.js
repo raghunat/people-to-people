@@ -42,6 +42,13 @@ router.get('/appRegister', function (req, res, next) {
   });
 });
 
+router.get('/waiting', function (req, res) {
+  res.render('waitingRoom', {
+    title: 'Waiting Room',
+    email: req.session.user.email
+  });
+});
+
 router.get('/title', function (req, res, next) {
   res.render('title', {
     title: 'title'
